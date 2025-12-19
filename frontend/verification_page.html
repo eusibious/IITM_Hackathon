@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+    <link rel="stylesheet" href="/frontend/styles/verification.css">
+</head>
+<body>
+    <header>
+        <p>One-Human-One-Vote</p>
+    </header>
+    <main>
+        <div>
+            <button onclick="window.location.href='result_page.html'">Goto Result Page</button>   
+            <button onclick="window.location.href='voting_page.html'">Goto Voting Page</button>
+        </div>
+        
+        <div class="content-container">
+             <h1>Verify yourself</h1>
+            <label  for="voter-id">Identification</label>
+            <input type="text" id="voter-id" name="voter-id" placeholder="Enter your Voter ID" size="100">
+            <label for="challenge">Challenge</label>
+            <input type="text" id="challenge" name="challenge" placeholder="#" disabled>
+            <label for="response">Response</label>
+            <input type="text" id="response" name="response" placeholder="Enter your response">
+            <button id="verify-button">Verify</button>
+        </div>
+    </main>
+</body>
+</html>

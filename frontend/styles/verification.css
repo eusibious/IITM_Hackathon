@@ -1,0 +1,66 @@
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+
+body{
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    color: #37353E;
+    background: white;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #EBF4DD;
+    box-shadow: 0 4px 6px hsl(110deg 10% 50% / 0.32);
+    margin-bottom: 200px;
+}
+
+main {
+    align-items: center;
+    /* height: calc(100vh - 80px); */
+    margin-top: -150px;
+}
+.content-container {
+    background:#EBF4DD;
+    align-self: center;
+    height:auto;
+    width: 320px;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5.9px 11.8px 11.8px hsl(110deg 10% 50% / 0.32);
+    align-items: space-between;
+}
+#verify-button {
+    margin-top: 15px;
+    width: 100px;
+    height: 35px;
+    align-self: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #37353E;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0;
+    /* font-size: 36px; */
+    color: #37353E;
+    align-self: center;    
+}
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
