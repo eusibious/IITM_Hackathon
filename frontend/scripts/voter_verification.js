@@ -1,11 +1,41 @@
-  document.addEventListener('DOMContentLoaded', () => {
+//import .env from '../../.env' ;  
+
+// Provider, Wallet, Contract (Ethers v6)
+// --------------------
+
+const provider = new ethers.JsonRpcProvider(RPC_URL);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, wallet);
+
+
+  
+document.addEventListener('DOMContentLoaded', () => {
+
+            // --------------------
+            // DOM Elements
+            // --------------------
             const form = document.querySelector('.verify-form');
             const voterId = document.getElementById('voter-id');
             const challengeBlock = document.getElementById('challenge-block');
             const responseBlock = document.getElementById('response-block');
             const responseInput = document.getElementById('response');
+            const idEnterButton = document.getElementById('id-enter-button');
+
 
             let revealed = false;
+
+            idEnterButton.onclick = (event) => {}
+
+
+            // getNumberButton.onclick = async () => {
+            // try {
+            //     const number = await contract.getNumber();
+            //     currentNumberSpan.innerText = number.toString();
+            // } catch (err) {
+            //     console.error("Error reading number:", err);
+            //     alert("Error reading number. Check console.");
+            // }
+            // };
 
             form.addEventListener('submit', (event) => {
                 if (revealed) {
@@ -24,4 +54,4 @@
                 revealed = true;
                 responseInput?.focus();
             });
-        })();
+})();

@@ -22,6 +22,7 @@
                     <div class="form-row">
                         <label for="voter-id">Identification</label>
                         <input type="text" id="voter-id" name="voter-id" placeholder="Enter your Voter ID" autocomplete="off" inputmode="numeric" />
+                        <button id="id-enter-button">Enter</button>
                     </div>
                     <div class="form-row hidden" id="challenge-block">
                         <label for="challenge">Challenge</label>
@@ -31,12 +32,15 @@
                         <label for="response">Response</label>
                         <input type="text" id="response" name="response" placeholder="Enter your response" autocomplete="off" />
                     </div>
-                    <button id="verify-button" type="submit">Verify</button>
+                    <button class="form-row hidden" id="verify-button" type="submit">Verify</button>
                 </fieldset>
             </form>
         </section>
     </main>
 
     <script src="/frontend/scripts/voter_verification.js"></script>
+    <!-- Ethers.js CDN (v6) -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+
 </body>
 </html>
