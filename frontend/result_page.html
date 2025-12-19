@@ -4,21 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result Page</title>
+    <meta name="description" content="View election results and voting statistics" />
+    <link rel="stylesheet" href="styles/result_page.css">
 </head>
 <body>
-    <div class="wrapper-container">
-        <button onclick="window.location.href='verification_page.html'">Goto verification Page</button>        
-        <button onclick="window.location.href='voting_page.html'">Goto Voting Page</button>        
+    <header class="site-header">
+        <h1>One-Human-One-Vote</h1>
+        <nav class="nav">
+            <a href="verification_page.html">Go to Verification Page</a>
+            <a href="voting_page.html">Go to Voting Page</a>
+        </nav>
+    </header>
+    <main>
+        <section class="result-section" aria-labelledby="result-title">
+            <h1 id="result-title">Voting Results</h1>
 
-        <h1>Election Results</h1>
-        <div>
-            <table style="border: 1px solid black;">
-                <thead>
-                    <th>Candidate</th>
-                    <th>Votes</th>
-                </thead>
-            </table>
-        </div>
-    </div>
+            <div class="table-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Candidate</th>
+                            <th>Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Results will be populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

@@ -4,28 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Page</title>
-    <link rel="stylesheet" href="/frontend/styles/verification.css">
+    <link rel="stylesheet" href="styles/verification_page.css">
 </head>
 <body>
-    <header>
-        <p>One-Human-One-Vote</p>
+    <header class="site-header">
+        <h1>One-Human-One-Vote</h1>
+        <nav class="nav">
+            <a href="result_page.html">Go to Result Page</a>
+            <a href="voting_page.html">Go to Voting Page</a>
+        </nav>
     </header>
     <main>
-        <div>
-            <button onclick="window.location.href='result_page.html'">Goto Result Page</button>   
-            <button onclick="window.location.href='voting_page.html'">Goto Voting Page</button>
-        </div>
-        
-        <div class="content-container">
-             <h1>Verify yourself</h1>
-            <label  for="voter-id">Identification</label>
-            <input type="text" id="voter-id" name="voter-id" placeholder="Enter your Voter ID" size="100">
-            <label for="challenge">Challenge</label>
-            <input type="text" id="challenge" name="challenge" placeholder="#" disabled>
-            <label for="response">Response</label>
-            <input type="text" id="response" name="response" placeholder="Enter your response">
-            <button id="verify-button">Verify</button>
-        </div>
+        <section class="verify-section" aria-labelledby="verify-title">
+            <h2 id="verify-title">Check Your Eligibility</h2>
+            <form class="verify-form" action="#" method="post" >
+                <fieldset>
+                    <div class="form-row">
+                        <label for="voter-id">Identification</label>
+                        <input type="text" id="voter-id" name="voter-id" placeholder="Enter your Voter ID" autocomplete="off" inputmode="numeric" />
+                    </div>
+                    <div class="form-row hidden" id="challenge-block">
+                        <label for="challenge">Challenge</label>
+                        <input type="text" id="challenge" name="challenge" placeholder="#" disabled aria-disabled="true" />
+                    </div>
+                    <div class="form-row hidden" id="response-block">
+                        <label for="response">Response</label>
+                        <input type="text" id="response" name="response" placeholder="Enter your response" autocomplete="off" />
+                    </div>
+                    <button id="verify-button" type="submit">Verify</button>
+                </fieldset>
+            </form>
+        </section>
     </main>
+
+    <script src="/frontend/scripts/voter_verification.js"></script>
 </body>
 </html>

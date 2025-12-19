@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voting Page</title>
+    <link rel="stylesheet" href="/frontend/styles/voting_page.css" />
 </head>
 <body>
-    <div class="wrapper-container">
-        <button onclick="window.location.href='result_page.html'">Goto Result Page</button>        
-        <button onclick="window.location.href='verification_page.html'">Goto verification Page</button>
-        <div>
-            <h1>Select your candidate</h1>
-            <form action="#" method="post">
-                <label for="A">Candidate <em>A</em>, id: 1</label>
-                <label for="B">Candidate <em>B</em>, id: 4</label>
-                <label for="C">Candidate <em>C</em>, id: 13</label>
-                Encrypt the id of the candidate you want to vote for and enter the cyphertext:<br>
-                <input type="text" id="C1X" name="C1X" placeholder="C1X"><br>
-                <input type="text" id="C1Y" name="C1Y" placeholder="C1Y"><br>
-                <input type="text" id="C2X" name="C2X" placeholder="C2X"><br>
-                <input type="text" id="C2Y" name="C2Y" placeholder="C2Y"><br>
-                <input type="submit" value="Submit Vote">
+    <header class="site-header">
+        <h1>One-Human-One-Vote</h1>
+        <nav class="nav">
+            <a href="result_page.html">Go to Result Page</a>
+            <a href="verification_page.html">Go to Verification Page</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="vote-section">
+            <h2>Select your candidate</h2>
+
+            <div class="candidate-list" aria-describedby="candidate-note">
+                <p><strong>Candidate A</strong> -> ID: 1</p>
+                <p><strong>Candidate B</strong> -> ID: 4</p>
+                <p><strong>Candidate C</strong> -> ID: 13</p>
+            </div>
+
+            <form action="#" method="post" class="vote-form">
+                <p id="candidate-note">
+                    Encrypt the id of the candidate you want to vote for and enter the ciphertext components below.
+                </p>
+
+                <fieldset>
+                    <legend>Ciphertext</legend>
+                    <div class="form-row">
+                        <label for="C1X">C1X</label>
+                        <input type="text" id="C1X" name="C1X" placeholder="C1X" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="C1Y">C1Y</label>
+                        <input type="text" id="C1Y" name="C1Y" placeholder="C1Y" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="C2X">C2X</label>
+                        <input type="text" id="C2X" name="C2X" placeholder="C2X" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="C2Y">C2Y</label>
+                        <input type="text" id="C2Y" name="C2Y" placeholder="C2Y" required />
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit Vote</button>
             </form>
         </section>
     </main>
