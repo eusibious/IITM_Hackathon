@@ -130,7 +130,7 @@ main {
     color: #4a4a52;
 }
 
-.verify-form input[type="text"] {
+.verify-form input[type="text"], .verify-form input[type="number"] {
     padding: 10px 12px;
     border-radius: 6px;
     border: 1px solid #c9d7b5;
@@ -140,7 +140,7 @@ main {
     transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
-.verify-form input[type="text"]:focus-visible {
+.verify-form  input[type="text"]:focus-visible, .verify-form  input[type="number"]:focus-visible {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px hsl(110deg 40% 70% / 0.35);
@@ -159,19 +159,32 @@ main {
     justify-self: center;
 }
 
-.verify-form button[type="submit"]:hover {
+.verify-form  button[type="submit"]:hover {
     background: var(--accent-dark);
     transform: translateY(-1px);
     box-shadow: 0 10px 18px hsl(110deg 10% 40% / 0.25);
 }
 
-.verify-form button[type="submit"]:active {
+.verify-form  button[type="submit"]:active {
     transform: translateY(0);
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
+#id-enter-button {
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 15px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    min-width: 180px;
+    margin-left: 130%;
+}
+
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 540px) {

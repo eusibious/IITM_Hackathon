@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Page</title>
+    <meta name="description" content="Verify your identity to proceed to voting" />
     <link rel="stylesheet" href="styles/verification_page.css">
 </head>
 <body>
     <header class="site-header">
         <h1>One-Human-One-Vote</h1>
         <nav class="nav">
+            <button onclick="connectWallet()">Connect Wallet</button>
+            <p id="wallet-address"></p>
+
             <a href="result_page.html">Go to Result Page</a>
             <a href="voting_page.html">Go to Voting Page</a>
         </nav>
@@ -17,30 +21,36 @@
     <main>
         <section class="verify-section" aria-labelledby="verify-title">
             <h2 id="verify-title">Check Your Eligibility</h2>
-            <form class="verify-form" action="/frontend/scripts/voter_verification.js" method="post" >
+            <form class="verify-form">
                 <fieldset>
+
                     <div class="form-row">
                         <label for="voter-id">Identification</label>
-                        <input type="text" id="voter-id" name="voter-id" placeholder="Enter your Voter ID" autocomplete="off" inputmode="numeric" />
-                        <button id="id-enter-button">Enter</button>
+                        <input type="number" id="voter-id" name="voter-id" placeholder="Enter your Voter ID"  />
+                        <button id="id-enter-button" class="enter-btn" >Enter</button>
+
                     </div>
+
                     <div class="form-row hidden" id="challenge-block">
                         <label for="challenge">Challenge</label>
-                        <input type="text" id="challenge" name="challenge" placeholder="#" disabled aria-disabled="true" />
+                        <input type="text" id="challenge-text" name="challenge"  readonly  />
                     </div>
+
                     <div class="form-row hidden" id="response-block">
                         <label for="response">Response</label>
-                        <input type="text" id="response" name="response" placeholder="Enter your response" autocomplete="off" />
+                        <input type="text" id="response" name="response" placeholder="Enter your response" />
                     </div>
                     <button class="form-row hidden" id="verify-button" type="submit">Verify</button>
+                    
                 </fieldset>
             </form>
         </section>
     </main>
 
-    <script src="/frontend/scripts/voter_verification.js"></script>
-    <!-- Ethers.js CDN (v6) -->
-    <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+    <script src="config.js"></script>
+    <script src="scripts/voter_verification.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.10.0/dist/ethers.min.js"></script>
+
 
 </body>
 </html>
